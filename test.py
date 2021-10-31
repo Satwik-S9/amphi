@@ -26,5 +26,3 @@ clf.plot()
 clf2 = amphi.Kmeans()
 clf2.predict(x_new)
 clf2.plot()
-
-
