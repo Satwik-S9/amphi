@@ -2,14 +2,14 @@
 This is a personal ML Libarary that I have been working on and will keep updating as I learn more....
 Currently this file contains popular ML Algorithms and Models like:
 1. Linear Regression
-2. Logistic Regression (Incomplete)
+2. Logistic Regression 
 3. Kmeans
 4. GMM based EM Algorithm for Clustering
-5. HMM (Incomplete)
+5. PCA
+6. HMM (Incomplete)
 
 ## To Complete:
-1. Logistic Regression
-2. HMM
+1. HMM
 
 ## To add:
 1. Perceptron
