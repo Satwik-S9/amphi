@@ -1,17 +1,18 @@
 """
-Author: Satwik Srivastava
+Author: Satwik Srivastava (^__^)
 Profiles >>==>
-    LinkedIn: BLANK
-    github: BLANK
+    LinkedIn : https://www.linkedin.com/in/satwiksrivastava/
+    twitter  : @Satwik_9
+    github   : https://github.com/Satwik-S9
 
-This is a personal project that has some of the most common Machine Learning algorithms implemented into it.
-All the algorithms are implemented from scratch using basic libraries such as numpy, pandas and matplotlib.
-"""
+- This is a personal project that has some of the most common Machine Learning algorithms implemented into it.
+- All the algorithms are implemented from scratch using basic libraries such as numpy, pandas and matplotlib.
+- The comments are done using "Better Comments" extension for vs-code see its syntax for ehat each type of comment means.
 
 # todo: Implement identity and diagonal covariance matrices in GMM
 # todo: Implement returning labels in GMM
 #// todo: Complete plot functions for the models :: completed
-
+"""
 
 import math
 import numpy as np
@@ -25,9 +26,8 @@ from scipy import stats
 
 
 def mse(y_pred, y, give_rmse=False, repr=False):
-    mse = np.mean((y_pred - y)**2)
+    mse = np.mean((y_pred - y)**2)  
     rmse = np.sqrt(mse)
-
     if not give_rmse and not repr:
         return mse
     elif not give_rmse and repr:
@@ -38,8 +38,8 @@ def mse(y_pred, y, give_rmse=False, repr=False):
     return f"The Mean Squared Error is: {mse}, The Root Mean Squared Error is: {rmse}"
 
 #? Regression Algorithms
-# note: returning [nan] array of weights.
-##* Linear Regression
+# note: returning [nan] array of weights. :: Solved --> Issue was occuring due to Non Numerical Dataset.
+##* Linear Regression 
 
 
 class LinearRegerssion:
@@ -89,7 +89,7 @@ class LinearRegerssion:
         m2 = plt.scatter(X_test, y_test, color=cmap(0.5), s=27)
         plt.plot(X, y_predict_line, color='black',
                  linewidth=2.5, label='Prediction')
-        
+
         plt.title("Linear Regression Plot")
         plt.show()
 
@@ -179,7 +179,7 @@ class LogisticRegression:
 ##* Kmeans
 def euclidian_distance(x1, x2):
     return np.sqrt(np.sum((x1-x2)**2))
-
+ 
 
 class Kmeans:
     def __init__(self, K=3, max_iters=100, plot_steps=False):
@@ -374,11 +374,11 @@ class GMM:
 
         #! Not always working
         # for diagonal covariance matrix
-        if self.cm == 'diag':
-            d = []
-            for i in range(self.k):
-                d.append(np.diag(np.diag(self.covs[i])))
-            self.covs = np.array(d)
+        # if self.cm == 'diag':
+        #     d = []
+        #     for i in range(self.k):
+        #         d.append(np.diag(np.diag(self.covs[i])))
+        #     self.covs = np.array(d)
 
         assert self.covs.shape == (self.k, self.X.shape[1], self.X.shape[1])
         assert self.means.shape == (self.k, self.X.shape[1])
